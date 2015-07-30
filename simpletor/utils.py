@@ -29,9 +29,7 @@ class ValidateUtils:
     def is_mobile(self, string):
         return re.match('^1[3-8][0-9]\d{8}$', string)
     
-    
-    
-validate_utils = ValidateUtils() 
+validate_utils = ValidateUtils()
 
 class JSONEncoder(json.JSONEncoder):
     '''Json 编码器'''
@@ -42,19 +40,18 @@ class JSONEncoder(json.JSONEncoder):
             return obj.strftime('%Y-%m-%d')
         else:
             return json.JSONEncoder.default(self, obj)
-        
+
 def md5(source):
     '''MD5'''
     _md5 = hashlib.md5()
     _md5.update(source)
     return _md5.hexdigest()
-        
+
 def sha1(password):
     '''Password Hash'''
     _sha1 = hashlib.sha1()
     _sha1.update(password)
     return _sha1.hexdigest()
-
 
 def crop(img, sizes):
     '''裁切'''

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>AngularJS Directives</title>
+    <script src="/static/js/angular.js"></script>
+</head>
+<body>
+<!--
+
+    <div ng-app="" ng-init="firstName='John'">
+
+    <p>The name is <span ng-bind="firstName"></span></p>
+
+    </div>
+-->
+
+<div data-ng-app="" data-ng-init="firstName='John';quantity=1;price=5;
+names=['Jani','Hege','Kai'];
+namesc=[
+{name:'Jani',country:'Norway'},
+{name:'Hege',country:'Sweden'},
+{name:'Kai',country:'Denmark'}]">
+    <p>The name is <span data-ng-bind="firstName"></span></p>
+    <hr/>
+    <h3>Data Binding</h3>
+    Quantity: <input type="number" data-ng-model="quantity">
+    Costs: <input type="number" data-ng-model="price">
+
+    Total in dollar: {{ quantity * price }}
+    <hr/>
+    <h3>Repeating HTML Elements</h3>
+    <ul>
+        <li ng-repeat="x in names">
+            {{ x }}
+        </li>
+    </ul>
+    <ul>
+        <li ng-repeat="x	in namesc">
+            {{ x.name + ', ' + x.country }}
+        </li>
+    </ul>
+    <br/>
+</div>
+</body>
+</html>

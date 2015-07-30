@@ -220,8 +220,7 @@ class Connection(object):
         # you try to perform a query and it fails.  Protect against this
         # case by preemptively closing and reopening the connection
         # if it has been idle for too long (7 hours by default).
-        if (self._db is None or
-            (time.time() - self._last_use_time > self.max_idle_time)):
+        if (self._db is None or (time.time() - self._last_use_time > self.max_idle_time)):
             self.reconnect()
         self._last_use_time = time.time()
 
@@ -271,6 +270,7 @@ torcon = Connection(settings.db_host, settings.db_name, user=settings.db_user, p
 
 def transactional(method):
     result = None
+
     def wrapper(*args, **kwds):
         try:
             result = method(*args, **kwds)
@@ -286,7 +286,7 @@ def get(method):
         sql = method(dao, *args, **kwds)
         return torcon.get(sql, *args, **kwds)
     return wrapper
-    
+
 def select(method):
     def wrapper(dao, *args, **kwds):
         sql = method(dao, *args, **kwds)

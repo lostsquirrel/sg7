@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/data/ArmyGroupSkill.txt" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/data/ArmyGroupSkillDescription.txt" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/data/ArmySkillDescription.txt" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/data/BFMagic.txt" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/data/City.txt" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/data/Format.txt" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/data/FormatDescription.txt" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/data/GenLV.txt" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/data/GenSkill.txt" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/data/GenSkillDescription.txt" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/data/General.txt" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/data/GeneralName.txt" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/data/Race.txt" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/data/ResID.txt" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/data/ResIDEvent.txt" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/data/SFMagic.txt" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/data/Soldier.txt" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/data/SoldierDescription.txt" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/data/SuperAtk.txt" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/data/SuperAtkDescription.txt" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/data/Thing.txt" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/data/Title.txt" charset="UTF-8" />
+  </component>
+</project>
