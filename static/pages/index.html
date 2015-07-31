@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <meta charset="UTF-8">
+    <script src="/static/js/angular.js"></script>
+    <link href="/static/css/global.css" rel="stylesheet"/>
+    <title>三国群英传7资料及攻略汇总</title>
+</head>
+
+<body>
+<div data-ng-app="sg7">
+    <header>三国群英传7资料及攻略汇总</header>
+    <nav>
+        <ul class="page-sidebar-menu">
+            <li>城市列表4</li>
+        </ul>
+
+    </nav>
+    <main>
+        <div data-ng-controller="cityCtrl">
+            <table>
+                <tr>
+                    <th>城市编号</th>
+                    <th>城市名称</th>
+                </tr>
+                <tr data-ng-repeat="city in cities">
+                    <td>{{city.city_id}}</td>
+                    <td>{{city.city_name}}</td>
+                </tr>
+            </table>
+        </div>
+    </main>
+</div>
+<script src="/static/js/sg7.js"></script>
+<script src="/static/js/cityCtrl.js"></script>
+</body>
+</html>

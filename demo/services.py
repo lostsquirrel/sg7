@@ -4,4 +4,5 @@ __author__ = 'lisong'
 from demo.models import cityDAO
 
 def get_cities(page, size):
-    return cityDAO.get_citys(10, 0)
+    offset = (page - 1) * size;
+    return cityDAO.get_cities(size, offset)

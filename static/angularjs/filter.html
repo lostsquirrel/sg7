@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>AngularJS Filters</title>
+    <script src="/static/js/angular.js"></script>
+</head>
+<body>
+<div ng-app="myApp" ng-controller="personCtrl">
+
+    <p>The name is {{ lastName | uppercase }}</p>
+
+    <p>The name is {{ lastName | lowercase }}</p>
+
+    <hr/>
+    <input type="number" ng-model="quantity">
+    <input type="number" ng-model="price">
+
+    <p>Total = {{ (quantity * price) | currency }}</p>
+
+    <hr/>
+    <ul>
+        <li ng-repeat="x in names | orderBy:'country'">
+            {{ x.name + ', ' + x.country }}
+        </li>
+    </ul>
+
+    <hr/>
+    <p><input type="text" ng-model="test"></p>
+
+    <ul>
+        <li ng-repeat="x in names | filter:test | orderBy:'country'">
+            {{ (x.name | uppercase) + ', ' + x.country }}
+        </li>
+    </ul>
+</div>
+<script>
+var app = angular.module('myApp', []);
+app.controller('personCtrl', function($scope) {
+    $scope.firstName = "John";
+    $scope.lastName = "Doe";
+    $scope.quantity = 3;
+    $scope.price = 7;
+    $scope.fullName = function() {
+        return $scope.firstName + " " + $scope.lastName;
+    };
+    $scope.names = [
+        {name:'Jani',country:'Norway'},
+        {name:'Hege',country:'Sweden'},
+        {name:'Kai',country:'Denmark'}
+    ];
+});
+
+
+
+</script>
+</body>
+</html>

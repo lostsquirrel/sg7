@@ -10,5 +10,12 @@ from demo import services as city_service
 @application.RequestMapping("/")
 class IndexHandler(application.RequestHandler):
     def get(self):
-        cities = city_service.get_cities(1, 10)
-        self.render('index.html', cities = cities)
+        self.render("index.html")
+
+@application.RequestMapping("/cities")
+class CityHandler(application.RequestHandler):
+    def get(self):
+        page = self.get_argument(name="page", default="1")
+        size = self.get_argument(name="size", default="10")
+        cities = city_service.get_cities(int(page), int(size))
+        self.render_json(cities)

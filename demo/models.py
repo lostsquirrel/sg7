@@ -14,8 +14,11 @@ class City(torndb.Row):
 class CityDAO:
 
     @torndb.select
-    def get_citys(self, limit, offset):
-        sql = '''select city_id, city_name from cities order by city_id asc limit %s offset %s '''
+    def get_cities(self, limit, offset):
+        sql = '''SELECT city_id, city_name
+        FROM cities
+        ORDER BY city_id ASC
+        LIMIT %s OFFSET %s '''
         return sql
 
 cityDAO = CityDAO()
