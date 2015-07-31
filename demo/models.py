@@ -21,4 +21,11 @@ class CityDAO:
         LIMIT %s OFFSET %s '''
         return sql
 
+    @torndb.get
+    def count_cities(self):
+        sql = '''SELECT count(id)
+        FROM cities
+        '''
+
+        return sql
 cityDAO = CityDAO()
