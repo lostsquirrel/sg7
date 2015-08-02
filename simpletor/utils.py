@@ -19,6 +19,7 @@ from io import BytesIO
 from datetime import date, datetime
 import application
 
+
 class ValidateUtils:
     '''验证工具类'''
     def is_empty_str(self, string):
@@ -156,6 +157,21 @@ def str2datetime(date_str, pattern = "%Y-%m-%d"):
     except ValueError:
         raise application.AppError('日期转换出错')
     return d
+
+def pagination(records, page, size, counts):
+    result = dict()
+    print(counts)
+    total = counts['total']
+    pages = total / size
+    if total % size != 0:
+        pages += 1
+    result['pages'] = pages
+    result['page'] = page
+    result['size'] = size
+    result['records'] = records
+
+    return result
+
 
 def get_level(score):
     grade = 0

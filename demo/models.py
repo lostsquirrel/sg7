@@ -23,9 +23,32 @@ class CityDAO:
 
     @torndb.get
     def count_cities(self):
-        sql = '''SELECT count(id)
+        sql = '''SELECT count(id) as total
         FROM cities
         '''
 
         return sql
-cityDAO = CityDAO()
+
+
+city_dao = CityDAO()
+
+
+class ItemDAO:
+
+    @torndb.select
+    def get_items(self, limit, offset):
+        sql = '''
+        SELECT item_id, item_name, item_type, item_lv, description
+        FROM items
+        ORDER BY item_id asc
+        LIMIT %s OFFSET %s
+        '''
+
+    @torndb.get
+    def count_item(self):
+        sql = '''
+        SELECT COUNT(id) AS total
+        FROM items
+        '''
+
+item_dao = ItemDAO()

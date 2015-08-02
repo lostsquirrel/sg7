@@ -11,7 +11,7 @@
     <header>三国群英传7资料及攻略汇总</header>
     <nav>
         <ul class="page-sidebar-menu">
-            <li>城市列表4</li>
+            <li><a href="javascript:void(0)" data-ng-click="showCities()">城市列表</a></li>
         </ul>
 
     </nav>
@@ -22,11 +22,19 @@
                     <th>城市编号</th>
                     <th>城市名称</th>
                 </tr>
-                <tr data-ng-repeat="city in cities">
+                <tr data-ng-repeat="city in cities.records">
                     <td>{{city.city_id}}</td>
                     <td>{{city.city_name}}</td>
                 </tr>
             </table>
+            <span>第{{cities.page}}页,共{{cities.pages}}页</span>
+            <ul class="pagination">
+                <li data-ng-if="cities.page != 1"><a href="javascript: void(0)" data-ng-click="load_cities(0)">首页</a></li>
+                <li data-ng-if="cities.page > 1"><a href="javascript: void(0)" data-ng-click="load_cities(-1)">上一页</a></li>
+                <li data-ng-if="cities.page < cities.pages"><a href="javascript: void(0)" data-ng-click="load_cities(1)">下一页</a></li>
+                <li data-ng-if="cities.page < cities.pages"><a href="javascript: void(0)" data-ng-click="load_cities(2)">尾页</a></li>
+            </ul>
+
         </div>
     </main>
 </div>
