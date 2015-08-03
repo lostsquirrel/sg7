@@ -21,7 +21,7 @@ class CityHandler(application.RequestHandler):
         self.render_json(cities)
 
 @application.RequestMapping("/items")
-class CityHandler(application.RequestHandler):
+class ItemHandler(application.RequestHandler):
     def get(self):
         page = self.get_argument(name="page", default="1")
         size = self.get_argument(name="size", default="10")

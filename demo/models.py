@@ -32,7 +32,14 @@ class CityDAO:
 
 city_dao = CityDAO()
 
+class Item(torndb.Row):
+    """
 
+    """
+    def __init__(self):
+        self.id = None
+        self.item_id = None
+        self.item_name = None
 class ItemDAO:
 
     @torndb.select
@@ -44,11 +51,13 @@ class ItemDAO:
         LIMIT %s OFFSET %s
         '''
 
+        return sql
+
     @torndb.get
     def count_item(self):
         sql = '''
         SELECT COUNT(id) AS total
         FROM items
         '''
-
+        return sql
 item_dao = ItemDAO()

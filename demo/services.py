@@ -16,7 +16,7 @@ def get_cities(page, size):
 def get_items(page, size):
     offset = (page - 1) * size;
     records = item_dao.get_items(size, offset)
-    total = item_dao.count_items()
+    total = item_dao.count_item()
     items = pagination(records, page, size, total)
 
     return items
