@@ -266,7 +266,8 @@ if MySQLdb is not None:
     
 import settings
 
-torcon = Connection(settings.db_host, settings.db_name, user=settings.db_user, password=settings.db_password)
+torcon = Connection(settings.db_host, settings.db_name, user=settings.db_user, password=settings.db_password,
+                    max_idle_time=settings.db_max_idle_time)
 
 def transactional(method):
     result = None

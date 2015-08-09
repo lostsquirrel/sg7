@@ -6,6 +6,7 @@ Created on 2015年5月14日
 '''
 from simpletor import application
 from demo import services
+import settings
 
 @application.RequestMapping("/")
 class IndexHandler(application.RequestHandler):
@@ -27,3 +28,14 @@ class ItemHandler(application.RequestHandler):
         size = self.get_argument(name="size", default="10")
         cities = services.get_items(int(page), int(size))
         self.render_json(cities)
+
+@application.RequestMapping("/test")
+class TestHandler(application.RequestHandler):
+    def get(self):
+        data = {
+            'db_name': settings.db_name,
+            'db_host': settings.db_host,
+            'db_password': settings.db_password,
+            'db_user': settings.db_user,
+        }
+        self.render_json(data)

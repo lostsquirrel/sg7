@@ -10,6 +10,18 @@ app.config(['$routeProvider',
         templateUrl: '/static/pages/items.html',
         controller: 'itemCtrl'
       }).
+      when('/map', {
+        templateUrl: '/static/pages/map.html',
+        controller: 'mapCtrl'
+      }).
+      when('/about_us', {
+        templateUrl: '/static/pages/about_us.html',
+        controller: 'aboutUsCtrl'
+      }).
+      when('/', {
+        templateUrl: '/static/pages/welcome.html',
+        controller: 'baseCtrl'
+      }).
       otherwise({
         redirectTo: '/'
       });
@@ -18,6 +30,6 @@ app.config(['$routeProvider',
 app.directive('pagination', function() {
   return {
     restrict: 'E',
-    template: '/static/pages/pagination.html'
+    templateUrl: '/static/pages/pagination.html'
   };
 });

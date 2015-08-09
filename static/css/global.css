@@ -55,3 +55,6 @@ ul.page-sidebar-menu {
     margin: 0px;
     padding: 0px;
 }
+.disable {
+    disabled: disabled;
+}

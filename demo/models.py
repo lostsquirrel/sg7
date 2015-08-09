@@ -45,7 +45,7 @@ class ItemDAO:
     @torndb.select
     def get_items(self, limit, offset):
         sql = '''
-        SELECT item_id, item_name, item_type, item_lv, description
+        SELECT item_id, item_name, item_type, item_lv, description, quantity_limit
         FROM items
         ORDER BY item_id asc
         LIMIT %s OFFSET %s

@@ -1,9 +1,9 @@
-<span>第{{cities.page}}页,共{{cities.pages}}页</span>
+<span>第{{data.page}}页,共{{data.pages}}页</span>
 <ul class="pagination">
-    <li data-ng-if="cities.page != 1"><a href="javascript: void(0)" data-ng-click="load_cities(0)">首页</a></li>
-    <li data-ng-if="cities.page > 1"><a href="javascript: void(0)" data-ng-click="load_cities(-1)">上一页</a></li>
-    <li data-ng-if="cities.page < cities.pages"><a href="javascript: void(0)" data-ng-click="load_cities(1)">下一页</a>
+    <li ><a data-ng-disabled="data.page == 1" href="javascript: void(0)" data-ng-click="load_more(0)">首页</a></li>
+    <li data-ng-disabled="data.page > 1"><a href="javascript: void(0)" data-ng-click="load_more(-1)">上一页</a></li>
+    <li data-ng-disabled="data.page < data.pages"><a href="javascript: void(0)" data-ng-click="load_more(1)">下一页</a>
     </li>
-    <li data-ng-if="cities.page < cities.pages"><a href="javascript: void(0)" data-ng-click="load_cities(2)">尾页</a>
+    <li ><a data-ng-disabled="data.page == data.pages" href="javascript: void(0)" data-ng-click="load_more(2)">尾页</a>
     </li>
 </ul>
