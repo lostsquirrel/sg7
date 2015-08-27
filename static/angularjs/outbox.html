@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+  <head>
+      <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,700' rel='stylesheet' type='text/css'>
+    <link href="https://s3.amazonaws.com/codecademy-content/projects/bootstrap.min.css" rel="stylesheet" />
+    <link href="/static/css/outbox.css" rel="stylesheet" />
+    <script src="/static/js/angular.js"></script>
+  </head>
+  <body ng-app="OutboxApp">
+    <div class="header">
+      <div class="container">
+        <img src="https://s3.amazonaws.com/codecademy-content/projects/4/outbox-1/img/logo.svg" width="140" height="150">
+      </div>
+    </div>
+
+    <div class="main" ng-controller="OutboxController">
+      <div class="container">
+
+        <div class="email" ng-repeat="email in emails">
+          <span class="from">{{email.from}} </span>
+            <span class="subject">{{email.subject}} </span>
+            <span class="date">{{email.datetime | date: 'mediumDate'}} </span>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Modules -->
+    <script src="/static/js/outbox.js"></script>
+
+    <!-- Controllers -->
+    <script src="/static/js/controllers/OutboxController.js"></script>
+
+    <!-- Services -->
+    <script src="/static/js/services/emails.js"></script>
+    
+  </body>
+</html>
