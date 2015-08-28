@@ -14,7 +14,7 @@ static_dir = os.path.join(os.path.dirname(__file__), "static")
 
 deploy_sae = False
 
-port = 8080
+port = 8888
 
 db_host = '127.0.0.1'
 db_name = 'sg7'
