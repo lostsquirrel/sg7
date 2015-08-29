@@ -12,7 +12,7 @@ class IndexHandler(application.RequestHandler):
 
 
 @application.RequestMapping("/angular/customers")
-class IndexHandler(application.RequestHandler):
+class coustomersHandler(application.RequestHandler):
     def get(self):
         self.render_json({
             "records": [
