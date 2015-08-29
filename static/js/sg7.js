@@ -1,6 +1,6 @@
 var app = angular.module('sg7', ['ngRoute', 'controllers']);
-app.config(['$routeProvider',
-  function($routeProvider) {
+app.config(['$routeProvider', '$locationProvider',
+  function($routeProvider, $locationProvider) {
     $routeProvider.
       when('/cities', {
         templateUrl: '/static/pages/cities.html',
@@ -25,6 +25,8 @@ app.config(['$routeProvider',
       otherwise({
         redirectTo: '/'
       });
+
+      $locationProvider.html5Mode(true);
   }]);
 
 app.directive('pagination', function() {
