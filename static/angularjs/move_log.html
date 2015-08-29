@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+  <head>
+    <link href="https://s3.amazonaws.com/codecademy-content/projects/bootstrap.min.css" rel="stylesheet" />
+    <link href='https://fonts.googleapis.com/css?family=Oswald:400,700' rel='stylesheet' type='text/css'>
+    <link href="css/move_log.css" rel="stylesheet" />
+    <script src="js/vendor/angular.min.js"></script>
+  </head>
+  <body ng-app="MoveLogApp">
+    <div class="header">
+      <div class="container">
+        MOVE Log
+      </div>
+    </div>
+
+    <div class="main" data-ng-controller="MainController">
+      <div class="container">
+
+        <div class="row" data-ng-repeat="e in exercises">
+          <div class="exercise-icon col-xs-2"><img data-ng-src="{{e.icon}}" alt="{{e.name}}"> </div>
+
+          <div class="col-xs-6">
+            <p class="exercise-name">{{e.name}} </p>
+          </div>
+
+          <div class="col-xs-4 counters">
+            <span class="decrease" data-ng-click="decrease($index)">-</span>
+              <span class="count"> {{e.count}} </span>
+              <span class="increase" data-ng-click="increase($index)">+</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="footer">
+      <div class="container">
+      </div>
+    </div>
+
+    <!-- Modules -->
+    <script src="js/move_log.js"></script>
+
+    <!-- Controllers -->
+    <script src="js/controllers/MoveLogController.js"></script>
+
+  </body>
+</html>
