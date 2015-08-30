@@ -15,6 +15,7 @@ table tr:nth-child(even) {
 header, nav, section, main {
     display: block;
 }
+
 header {
     filter: none !important;
     background-image: none !important;
@@ -52,8 +53,9 @@ main {
 
 ul.page-sidebar-menu {
     list-style: outside none none;
-    margin: 0px;
-    padding: 0px;
+    margin: 10px;
+    padding: 10px;
+    border: 2px groove blue;
 }
 .disable {
     disabled: disabled;

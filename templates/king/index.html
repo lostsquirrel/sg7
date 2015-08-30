@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <meta charset="UTF-8">
+    <script src="/static/js/angular.js"></script>
+    <script src="/static/js/angular-route.min.js"></script>
+    <link href="/static/css/global.css" rel="stylesheet"/>
+    <title>大皇帝 资料及攻略汇总</title>
+    <base href="/king">
+    <style>
+        .level, .affect {
+            color: blue;
+            font-weight:bold;
+        }
+    </style>
+</head>
+
+<body>
+<div data-ng-app="kingApp">
+    <header>大皇帝 资料及攻略汇总</header>
+    <nav>
+        <ul class="page-sidebar-menu">
+            <li><a href="/king/soldiers">兵种列表</a></li>
+            <!--<li><a href="/items">物品列表</a></li>-->
+            <!--<li><a href="/map">地图</a></li>
+            <li><a href="/about_us">关于本站</a></li>-->
+        </ul>
+
+    </nav>
+    <main data-ng-view>
+
+    </main>
+</div>
+<script src="/static/js/king.js"></script>
+<script src="/static/js/controllers/king/controllers.js"></script>
+<script src="/static/js/services/king/services.js"></script>
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?368832a0cc9831d0a347648b5311dc9f";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+</body>
+</html>
