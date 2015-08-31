@@ -29,6 +29,16 @@ function($sce, $scope, $http, formulas) {
         }
     };
 }])
+.controller('GeneralsController', ['$scope','$http',
+function($scope, $http){
+    $http.get('/api/king/generals')
+    .success(function(data){
+        $scope.generals = data;
+    })
+    .error(function(err){
+        $scope.error = err;
+    });
+}])
 .controller('HomeController', ['$scope',
 function($scope){
     $scope.welcome = "欢迎访问本站，请点击左菜单查看相关内容!"

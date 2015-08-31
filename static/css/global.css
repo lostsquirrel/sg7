@@ -57,6 +57,11 @@ ul.page-sidebar-menu {
     padding: 10px;
     border: 2px groove blue;
 }
+
+page-sidebar-menu li {
+    margin: 10px;
+    padding: 10px;
+}
 .disable {
     disabled: disabled;
 }

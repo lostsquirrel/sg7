@@ -29,5 +29,13 @@ class SoldierHandler(application.RequestHandler):
         soldiers = services.get_soldiers()
         self.render_json(soldiers)
 
+@application.RequestMapping("/api/king/generals")
+class GeneralHandler(application.RequestHandler):
+    def get(self):
+        page = self.get_argument(name="page", default="1")
+        size = self.get_argument(name="size", default="10")
+        gs = services.get_generals()
+        self.render_json(gs)
+
 
 

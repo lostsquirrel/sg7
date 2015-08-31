@@ -3,8 +3,12 @@ app.config(['$routeProvider', '$locationProvider',
   function($routeProvider, $locationProvider) {
     $routeProvider
       .when('/king/soldiers', {
-        templateUrl: '/static/js/views/king/soldier.html',
+        templateUrl: '/static/js/views/king/soldiers.html',
         controller: 'SoldiersController'
+      })
+      .when('/king/generals', {
+        templateUrl: '/static/js/views/king/generals.html',
+        controller: 'GeneralsController'
       })
       .when('/king', {
         templateUrl: '/static/js/views/king/welcome.html',

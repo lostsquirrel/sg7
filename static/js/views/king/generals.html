@@ -1,0 +1,23 @@
+<div>
+    <h2>
+        <span>武将列表:</span>
+    </h2>
+
+    <table>
+        <tr>
+            <th>编号</th>
+            <th>名称</th>
+            <th>兵种</th>
+            <th>技能</th>
+        </tr>
+        <tr data-ng-repeat="item in generals">
+            <td>{{$index + 1}}</td>
+            <td>{{item.general_name}}</td>
+            <td>{{item.soldier_name}}</td>
+            <td>{{item.skill_name}}: {{item.skill_desc}}</td>
+        </tr>
+    </table>
+    <p>
+
+    </p>
+</div>

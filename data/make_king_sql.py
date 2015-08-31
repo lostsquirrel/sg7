@@ -62,5 +62,34 @@ def build_soldier_skills():
             # print(y)
             print sql_format % (_nd[0].strip(), _nd[1].strip(), _icon[y].strip())
 
+def build_general_base():
+    gs = data.sheet_by_index(0)
+    nrows = gs.nrows
+    for row in range(1, nrows):
+        raw_value = gs.row(row)
+        name = raw_value[0].value
+        sql_format = """insert into king_general (
+        general_name,
+        label,
+        format_suggestion,
+        skill_name,
+        skill_desc,
+        soldier_id,
+        soldier_name,
+        general_cover,
+        general_avatar
+        ) values ('%s', '%s', '%s','%s', '%s', '%s','%s', '%s', '%s');"""
+        param = list()
+        rows = (0, 1, 2, 3, 5, 6, 8, 9, 10)
+        sql_format = "UPDATE king_general g SET g.skill_desc  = '%s' WHERE g.skill_name = '%s';"
+        # for x in rows:
+            # param.append(getCellValue(raw_value[x]))
+        # print param
+        # print(tuple(param))
+        print sql_format % (getCellValue(raw_value[6]), getCellValue(raw_value[5]))
+
+def getCellValue(cell):
+    return unicode(cell.value.strip());
+
 if __name__ == '__main__':
-    build_soldier()
+    build_general_base()

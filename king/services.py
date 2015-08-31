@@ -2,6 +2,7 @@
 __author__ = 'lisong'
 
 from king.models import soldierDAO
+from king.models import generalDAO
 
 range_type = (u'近战', u'远程')
 soldier_type = (u'步兵', u'骑兵')
@@ -15,3 +16,9 @@ def get_soldiers():
             sk.level_tag = '%s_%s' % (s.id, sk.id)
 
     return records
+
+def get_generals():
+    gs = generalDAO.get_generals()
+
+    return gs
+

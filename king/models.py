@@ -12,7 +12,24 @@ class SolderSkills(torndb.Row):
         self.skill_desc = None
         self.icon = None
         self.formula = None
+class Soldier(torndb.Row):
+    """
 
+    """
+    def __init__(self):
+        self.id = None
+        self.soldier_name = None
+        self.attack_range = None
+        self.soldier_type = None
+        self.armor = None
+        self.skill_green = None
+        self.kill_blue = None
+        self.kill_purple = None
+        self.kill_gold = None
+        self.kill_green_name = None
+        self.skill_blue_name = None
+        self.skill_purple_name = None
+        self.skill_gold_name = None
 class SoldierDAO:
 
     @torndb.select
@@ -43,21 +60,11 @@ class SoldierDAO:
 
 soldierDAO = SoldierDAO()
 
-class Soldier(torndb.Row):
-    """
+class GeneralDAO:
 
-    """
-    def __init__(self):
-        self.id = None
-        self.soldier_name = None
-        self.attack_range = None
-        self.soldier_type = None
-        self.armor = None
-        self.skill_green = None
-        self.kill_blue = None
-        self.kill_purple = None
-        self.kill_gold = None
-        self.kill_green_name = None
-        self.skill_blue_name = None
-        self.skill_purple_name = None
-        self.skill_gold_name = None
+    @torndb.select
+    def get_generals(self):
+        sql = """SELECT * FROM `king_general"""
+        return sql
+
+generalDAO = GeneralDAO()
