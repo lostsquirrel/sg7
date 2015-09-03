@@ -1,4 +1,4 @@
-app.factory('formulas', [ function(){
+app.factory('formulas', ['$http', function($http){
     var formulas = [
     function(level) {
         return level + 2;
@@ -14,7 +14,6 @@ app.factory('formulas', [ function(){
     },
     function(level) {
         var x = 0;
-
         var temp = level;
         while(temp) {
             if (temp <= 10) {
@@ -27,7 +26,6 @@ app.factory('formulas', [ function(){
                     x += 0.01;
                 }
             }
-
             temp--;
         }
         var z = 25.93 + 0.39 * (level - 1) + x

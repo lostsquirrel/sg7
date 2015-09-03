@@ -1,18 +1,12 @@
-app.controller('SoldiersController', ['$sce', '$scope', '$http', 'formulas',
-function($sce, $scope, $http, formulas) {
+app.controller('SoldiersController', ['$sce', '$scope', 'formulas', 'soldiers',
+function($sce, $scope, formulas, soldier) {
     $scope.range_type = ['近战', '远程'];
     $scope.soldier_type = ['步兵', '骑兵'];
     $scope.armor_type = ['轻甲', '重甲'];
     $scope.formulas = formulas;
     $scope.level = 1;
-    $http.get('/api/king/soldiers')
-    .success(function(data){
-        $scope.soldiers = data;
-        $scope.affect();
-    })
-    .error(function(err){
-        $scope.error = err;
-    });
+
+
     $scope.affect = function() {
 //        console.debug($scope.level)
 //        console.debug($scope.soldiers)
@@ -28,15 +22,16 @@ function($sce, $scope, $http, formulas) {
             }
         }
     };
+    soldier.success(function(data) {
+        $scope.soldiers = data;
+        $scope.affect();
+    });
+
 }])
-.controller('GeneralsController', ['$scope','$http',
-function($scope, $http){
-    $http.get('/api/king/generals')
-    .success(function(data){
+.controller('GeneralsController', ['$scope','generals',
+function($scope, generals){
+    generals.success(function(data) {
         $scope.generals = data;
-    })
-    .error(function(err){
-        $scope.error = err;
     });
 }])
 .controller('HomeController', ['$scope',
