@@ -1,5 +1,5 @@
 app.controller('SoldiersController', ['$sce', '$scope', 'formulas', 'soldiers',
-function($sce, $scope, formulas, soldier) {
+function($sce, $scope, formulas, soldiers) {
     $scope.range_type = ['近战', '远程'];
     $scope.soldier_type = ['步兵', '骑兵'];
     $scope.armor_type = ['轻甲', '重甲'];
@@ -22,16 +22,19 @@ function($sce, $scope, formulas, soldier) {
             }
         }
     };
-    soldier.success(function(data) {
+    soldiers.success(function(data) {
         $scope.soldiers = data;
         $scope.affect();
     });
 
 }])
-.controller('GeneralsController', ['$scope','generals',
-function($scope, generals){
+.controller('GeneralsController', ['$scope','generals', 'soldiers',
+function($scope, generals, soldiers){
     generals.success(function(data) {
         $scope.generals = data;
+    });
+    soldiers.success(function(data) {
+        $scope.soldiers = data;
     });
 }])
 .controller('HomeController', ['$scope',

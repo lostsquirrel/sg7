@@ -3,8 +3,10 @@
         <span>武将列表:</span>
     </h2>
     <div>
-        <select>
-            <option></option>
+
+        <select data-ng-model="soldier_type" >
+            <option value="*">全部</option>
+            <option data-ng-repeat="soldier in soldiers" value="{{soldier.id}}">{{soldier.soldier_name}}</option>
         </select>
     </div>
     <table>
@@ -13,12 +15,15 @@
             <th>名称</th>
             <th>兵种</th>
             <th>技能</th>
+            <th>xx</th>
         </tr>
         <tr data-ng-repeat="item in generals">
             <td>{{$index + 1}}</td>
             <td>{{item.general_name}}</td>
-            <td>{{item.soldier_name}}</td>
+            <td>{{item.soldier_name }} </td>
+
             <td>{{item.skill_name}}: {{item.skill_desc}}</td>
+            <td><div style="display:none"></div>{{item.soldier_id | filter:soldier_type}}</td>
         </tr>
     </table>
     <p>

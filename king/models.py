@@ -64,7 +64,7 @@ class GeneralDAO:
 
     @torndb.select
     def get_generals(self):
-        sql = """SELECT * FROM `king_general"""
+        sql = """SELECT * FROM king_general"""
         return sql
 
 generalDAO = GeneralDAO()
