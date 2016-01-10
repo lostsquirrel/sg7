@@ -34,14 +34,14 @@ class SoldierDAO:
 
     @torndb.select
     def get_soldiers(self):
-        sql = '''SELECT id, soldier_name, attack_range, soldier_type, armor
+        sql = '''SELECT *
         FROM king_soldier
         '''
         return sql
 
     @torndb.get
     def get_soldier_skill(self, skill_id):
-        sql = '''SELECT id, skill_name, skill_desc, icon, formula, max_level
+        sql = '''SELECT *
         FROM king_soldier_skills
         WHERE id = %s
         '''
@@ -68,3 +68,17 @@ class GeneralDAO:
         return sql
 
 generalDAO = GeneralDAO()
+
+
+class SoldierAKDAO:
+    @torndb.select
+    def get_a(self, soldier_id):
+        sql = """SELECT * FROM king_soldier_skills_ak where from_id = %s"""
+        return sql
+
+    @torndb.select
+    def get_a(self, soldier_id):
+        sql = """SELECT * FROM king_soldier_skills_ak where to_id = %s"""
+        return sql
+
+soldierAKDAO = SoldierAKDAO()

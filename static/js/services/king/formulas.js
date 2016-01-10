@@ -200,6 +200,91 @@ app.factory('formulas', ['$http', function($http){
         }
 
         return res.toFixed(2);
+    },
+    // 14
+    function(level) {
+        var base = 10 * level;
+        if (level > 1  ) {
+            if (level % 2 == 1) {
+                base += Math.floor(level / 2);
+            } else {
+                base += Math.floor(level / 2) - 1;
+            }
+
+        }
+        return base;
+
+    },
+    // 15
+    function(level) {
+        var base = 8;
+        var step = 9;
+        return base + step * (level - 1) - Math.floor(level / 38);
+    },
+    // 16
+    function(level) {
+        return 30 * level + Math.floor(level / 20);
+    },
+    // 17
+    function(level) {
+        var base = 33.37;
+        var step = 0.5;
+        var increase = 0.01;
+
+        if (level >= 2) {
+            base += increase;
+           if (level % 2 == 1) {
+                base += Math.floor(level / 2) * increase;
+            } else {
+                base += (Math.floor(level / 2) - 1) * increase;
+            }
+        }
+        var res = base + (level - 1) * step;
+        return res.toFixed(2);
+    },
+    // 18
+    function(level) {
+        var base = 12.38;
+        var step = 0.19;
+        var increase = 0.01;
+        var temp = 1;
+        var tag = 2;
+        var xx = 2;
+        while(temp <= level) {
+            if (temp == xx) {
+                base -= increase;
+                if (tag > 0) {
+                   if (tag == 1) {
+                    xx += 1;
+                   }
+                   xx += 4;
+                } else {
+                    if (tag == -2) {
+                        xx += 1;
+                        tag = 2;
+                    }
+                    xx += 4;
+                }
+                tag--;
+            }
+            temp++;
+        }
+        var res = base + (level - 1) * step;
+        return res.toFixed(2);
+    },
+    // 19
+    function(level) {
+        var base = 31.18;
+        var temp = level;
+        var step = 0.47
+        var increase = 0.01
+        if (level >= 2 && level < 6) {
+            base += increase
+        } else if (level >= 6) {
+            base += Math.floor((level - 2) / 4) * increase;
+        }
+
+        return (base + (level - 1) * step).toFixed(2);
     }
     ];
 

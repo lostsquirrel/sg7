@@ -6,6 +6,10 @@ app.config(['$routeProvider', '$locationProvider',
         templateUrl: '/static/js/views/king/soldiers.html',
         controller: 'SoldiersController'
       })
+      .when('/king/soldier/:id', {
+        templateUrl: '/static/js/views/king/soldier_ak.html',
+        controller: 'SoldiersAKController'
+      })
       .when('/king/generals', {
         templateUrl: '/static/js/views/king/generals.html',
         controller: 'GeneralsController'

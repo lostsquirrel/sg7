@@ -37,6 +37,11 @@ function($scope, generals, soldiers){
         $scope.soldiers = data;
     });
 }])
+.controller('SoldiersAKController', ['$scope', 'soldiers', '$routeParams', 'soldier_ak',
+function($scope, soldiers, $routeParams, soldier_ak){
+    $scope.ak = soldier_ak($routeParams.id)
+    $scope.soldiers = soldiers
+}])
 .controller('HomeController', ['$scope',
 function($scope){
     $scope.welcome = "欢迎访问本站，请点击左菜单查看相关内容!"
